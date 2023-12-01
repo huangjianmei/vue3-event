@@ -1,19 +1,25 @@
 <script setup>
-// 局部组件（导入进来就能用）
-import {ref} from "vue"
-import SonCom from "@/components/05 sonCom.vue"
+import CenterCom from "@/components/07 centerCom.vue"
+import { provide,ref } from "vue"
+provide('theme-color','yellow');
 
-const money = ref(100);
-const changeFn = (value)=>{
-  money.value-=value
-};
+const count=ref(100);
+provide("count",count);
+provide("changeCount",(newCount)=>{
+  count.value=newCount
+});
+provide("addCount",(val)=>{
+  count.value+=val
+});
+
 
 </script>
 
 <template>
-  <div>父传子</div>
-  <!-- 给子组件，添加属性的方式传值 -->
-  <SonCom car="宝马车" :money="money" @changeMoney="changeFn"></SonCom>
+  <div>
+    <h1>我是顶层组件</h1>
+    <CenterCom></CenterCom>
+  </div>
 </template>
 
 <style scoped>
