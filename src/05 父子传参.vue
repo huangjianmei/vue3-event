@@ -13,7 +13,7 @@ const changeFn = (value)=>{
 <template>
   <div>父传子</div>
   <!-- 给子组件，添加属性的方式传值 -->
-  <SonCom car="宝马车" :money="money" @changeMoney="changeFn""></SonCom>
+  <SonCom car="宝马车" :money="money" @changeMoney="changeFn"></SonCom>
 </template>
 
 <style scoped>
