@@ -9,7 +9,7 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
     "format": "prettier --write src/",
     "prepare": "husky install",
-    "lint-staged": "klint-staged"
+    "lint-staged": "lint-staged"
   },
   "dependencies": {
     "pinia": "^2.1.7",
