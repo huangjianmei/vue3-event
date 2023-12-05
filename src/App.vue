@@ -1,17 +1,19 @@
 <script setup>
-import { useRouter } from 'vue-router'
-const router = useRouter()
-const goRegister = () => {
-  console.log(router, '=====router')
-  router.push('/register')
+import { useUserStore } from '@/stores/user'
+const userStore = useUserStore()
+const loginIn = () => {
+  userStore.saveToken('hjhkhkkkkkkk')
+}
+const loginOut = () => {
+  userStore.removeToken()
 }
 </script>
 <template>
   <div>
     <h1>我是首页</h1>
-    <test-demo></test-demo>
-    <el-button @click="$router.push('/login')">登录页</el-button>
-    <el-button @click="goRegister">注册页</el-button>
+    <h2>token:{{ userStore.token }}</h2>
+    <el-button @click="loginIn">登录</el-button>
+    <el-button @click="loginOut">退出</el-button>
   </div>
 </template>
 
