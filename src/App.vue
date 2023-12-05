@@ -9,8 +9,9 @@ const goRegister = () => {
 <template>
   <div>
     <h1>我是首页</h1>
-    <button @click="$router.push('/login')">登录页</button>
-    <button @click="goRegister">注册页</button>
+    <test-demo></test-demo>
+    <el-button @click="$router.push('/login')">登录页</el-button>
+    <el-button @click="goRegister">注册页</el-button>
   </div>
 </template>
 
