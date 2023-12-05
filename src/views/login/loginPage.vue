@@ -4,15 +4,11 @@
     name:"LoginIdex"
   }
 </script>-->
-<script setup>
-defineOptions({
-  name: 'LoginIdex'
-})
-</script>
+<script setup></script>
 
 <template>
   <div>
-    <h1>我是登录页</h1>
+    <h1>登录&注册</h1>
   </div>
 </template>
 

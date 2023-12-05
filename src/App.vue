@@ -11,6 +11,8 @@ const loginOut = () => {
 </script>
 <template>
   <div>
+    <router-view></router-view>
+    <hr />
     <h1>我是首页</h1>
     <h2>token:{{ userStore.token }}</h2>
     <h2>count:{{ counterStore.count }}</h2>
