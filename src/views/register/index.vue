@@ -1,4 +1,3 @@
-
 <!--<script>
 // vue3.3之前都要这样定义，3.3提供了defineOptions宏
   export default{
@@ -8,8 +7,8 @@
 
 <script setup>
 defineOptions({
-    name:"LoginIdex"
-  });
+  name: 'LoginIdex'
+})
 </script>
 
 <template>
@@ -18,5 +17,4 @@ defineOptions({
   </div>
 </template>
 
-<style scoped>
-</style>
+<style scoped></style>

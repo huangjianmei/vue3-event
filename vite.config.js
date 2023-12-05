@@ -5,12 +5,13 @@ import vue from '@vitejs/plugin-vue'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: '/',
   plugins: [
     vue({
-      script:{
-        defineModel:true //实验性特性
+      script: {
+        defineModel: true //实验性特性
       }
-    }),
+    })
   ],
   resolve: {
     alias: {

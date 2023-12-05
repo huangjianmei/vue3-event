@@ -1,5 +1,5 @@
 <script setup>
-  import BottomCom from "./07 bottomCom.vue"
+import BottomCom from './07 bottomCom.vue'
 </script>
 <template>
   <div>
@@ -8,6 +8,4 @@
   </div>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>

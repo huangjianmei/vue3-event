@@ -1,6 +1,6 @@
 <script setup>
-  import { useCounterStore } from "@/stores/counter"
-  const counterStore = useCounterStore();
+import { useCounterStore } from '@/stores/10/counter'
+const counterStore = useCounterStore()
 </script>
 <template>
   <div>
@@ -9,5 +9,4 @@
   </div>
 </template>
 
-<style scoped>
-</style>
+<style scoped></style>

@@ -1,7 +1,7 @@
-
 <!--
 原始写法
 <script setup>
+import {defineEmits} from "vue"
  defineProps({
   modelValue:String
  });
@@ -14,15 +14,17 @@
 </template>
 -->
 <script setup>
-import {defineModel} from "vue"
- const modelValue = defineModel()
- const emit=defineEmits(['uodate:modelValue']);
+import { defineModel } from 'vue'
+const modelValue = defineModel()
 </script>
 <template>
   <div>
-    <input type="text" :value="modelValue" @input="e=>modelValue=e.target.value"/>
+    <input
+      type="text"
+      :value="modelValue"
+      @input="(e) => (modelValue = e.target.value)"
+    />
   </div>
 </template>
 
-<style scoped>
-</style>
+<style scoped></style>

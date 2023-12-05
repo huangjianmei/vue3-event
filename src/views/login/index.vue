@@ -5,9 +5,9 @@
   }
 </script>-->
 <script setup>
-  defineOptions({
-    name:"LoginIdex"
-  });
+defineOptions({
+  name: 'LoginIdex'
+})
 </script>
 
 <template>
@@ -16,5 +16,4 @@
   </div>
 </template>
 
-<style scoped>
-</style>
+<style scoped></style>

@@ -5,9 +5,9 @@
   }
 </script>-->
 <script setup>
-  defineOptions({
-    name:"index"
-  });
+defineOptions({
+  name: 'index'
+})
 </script>
 <template>
   <div>
@@ -15,5 +15,4 @@
   </div>
 </template>
 
-<style scoped>
-</style>
+<style scoped></style>
