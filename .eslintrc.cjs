@@ -32,5 +32,10 @@ module.exports = {
     'vue/no-multiple-template-root': 'off',
     // 添加未定义变量错误提示，create-vue@3.6.3关闭
     'no-undef': 'error'
+  },
+  globals: {
+    ElMessage: 'readonly',
+    ElMessageBox: 'readonly',
+    ElLoading: 'readonly'
   }
 }
