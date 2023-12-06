@@ -1,0 +1,12 @@
+*{
+  border:none;
+  padding:0;
+  margin:0;
+}
+image{
+  border:none;
+}
+.df{
+  display: flex;
+  align-items: center;
+}
