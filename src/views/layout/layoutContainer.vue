@@ -7,6 +7,15 @@ import {
   UserFilled,
   Crop
 } from '@element-plus/icons-vue'
+import { useUserStore } from '@/stores'
+import { onMounted } from 'vue'
+
+const userStore = useUserStore()
+
+onMounted(() => {
+  userStore.getUserInfo()
+  console.log(userStore.userInfo, '==userInfo')
+})
 </script>
 
 <template>
@@ -48,7 +57,7 @@ import {
         </el-menu>
       </el-aside>
       <el-container>
-        <el-header>黑马程序员：{{}}</el-header>
+        <el-header>黑马程序员：{{ userStore.userInfo.username }}</el-header>
         <el-main>
           <router-view></router-view>
         </el-main>

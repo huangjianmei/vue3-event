@@ -16,7 +16,7 @@ instance.interceptors.request.use(
     // 在发送请求之前做些什么
     const userStore = useUserStore()
     if (userStore.token) {
-      config.token.Authorization = userStore.token
+      config.headers.Authorization = userStore.token
     }
     return config
   },
