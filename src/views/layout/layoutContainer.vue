@@ -67,4 +67,15 @@ import {
     background-size: 60%;
   }
 }
+.el-container {
+  background: #f2f2f2;
+  .el-main,
+  .el-header {
+    background: #fff;
+  }
+  .el-header {
+    margin-bottom: 10px;
+    line-height: 60px;
+  }
+}
 </style>
