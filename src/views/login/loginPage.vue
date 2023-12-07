@@ -3,7 +3,9 @@ import { ref } from 'vue'
 import { User, Lock } from '@element-plus/icons-vue'
 import { userRegisterService, userLoginService } from '@/api/user'
 import { useRouter } from 'vue-router'
+import { useUserStore } from '@/stores'
 
+const userStore = useUserStore()
 const router = useRouter()
 const formModel = ref({
   username: '',
@@ -16,6 +18,7 @@ const forgotPassword = () => {
   // isLogin.value=!isLogin
   console.log('忘记密码')
 }
+
 const sumbit = async (formEl) => {
   console.log(`${isLogin.value ? '登录' : '注册'}`)
   if (!formEl) return
@@ -23,10 +26,10 @@ const sumbit = async (formEl) => {
   loading.value = true
   if (isLogin.value) {
     userLoginService(formModel.value)
-      .then(() => {
+      .then((res) => {
         ElMessage.success('登录成功')
-        // formRef.value.resetFields();
-        console.log(router, '===router')
+        formRef.value.resetFields()
+        userStore.saveToken(res.data.token)
         router.push('/article/manage')
       })
       .finally(() => {
