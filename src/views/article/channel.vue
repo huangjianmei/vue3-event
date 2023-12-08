@@ -1,9 +1,14 @@
 <script setup></script>
 
 <template>
-  <div>
-    <h1>文章分类</h1>
-  </div>
+  <PageContainer title="文章分类">
+    <template #extra>
+      <el-button type="primary">添加分类</el-button>
+    </template>
+    <template #channelMsg>
+      <div>sjdafaksjfkajskdjaks</div>
+    </template>
+  </PageContainer>
 </template>
 
-<style scoped></style>
+<style scoped lang="scss"></style>
