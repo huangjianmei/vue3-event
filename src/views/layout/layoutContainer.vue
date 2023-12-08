@@ -98,8 +98,8 @@ onMounted(() => {
                   </el-dropdown-item>
                   <el-dropdown-item command="avatar">
                     <el-icon><crop /></el-icon>
-                    <span>更换头像</span></el-dropdown-item
-                  >
+                    <span>更换头像</span>
+                  </el-dropdown-item>
                   <el-dropdown-item command="password">
                     <el-icon><editPen /></el-icon>
                     <span>重置密码</span>
