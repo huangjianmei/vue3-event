@@ -15,11 +15,9 @@ getList()
 
 const dialogRef = ref(null)
 const handleEdit = (index, row) => {
-  console.log(index, row, '===编辑')
   dialogRef.value.open(row)
 }
 const handleDelete = async (index, row) => {
-  console.log(index, row, '删除')
   await ElMessageBox.confirm('你确定要删除吗', '温馨提示', {
     type: 'warning',
     confirmButtonText: '确定',

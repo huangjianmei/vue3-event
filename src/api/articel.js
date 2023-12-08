@@ -19,3 +19,8 @@ export const editChannelService = (data) => {
 export const delChannelService = (id) => {
   return request.delete('/my/cate/del', { params: { id } })
 }
+
+// 获取文章列表
+export const getActicelService = (data) => {
+  return request.get('/my/acticel/list', { data })
+}
