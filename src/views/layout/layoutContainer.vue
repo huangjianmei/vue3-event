@@ -5,12 +5,32 @@ import {
   EditPen,
   User,
   UserFilled,
-  Crop
+  Crop,
+  CaretBottom,
+  SwitchButton
 } from '@element-plus/icons-vue'
 import { useUserStore } from '@/stores'
 import { onMounted } from 'vue'
+import { useRouter } from 'vue-router'
 
 const userStore = useUserStore()
+const router = useRouter()
+const handleCommand = async (key) => {
+  if (key === 'logout') {
+    await ElMessageBox.confirm('你确定要退出吗？', '温馨提示', {
+      confirmButtonText: '确认',
+      cancelButtonText: '取消',
+      type: 'warning'
+    })
+
+    userStore.removeToken()
+    userStore.setUser({})
+    // router.push("/login")
+    window.location.reload()
+  } else {
+    router.push(`/user/${key}`)
+  }
+}
 
 onMounted(() => {
   userStore.getUserInfo()
@@ -57,7 +77,39 @@ onMounted(() => {
         </el-menu>
       </el-aside>
       <el-container>
-        <el-header>黑马程序员：{{ userStore.userInfo.username }}</el-header>
+        <el-header>
+          <div>黑马程序员：{{ userStore.userInfo.username }}</div>
+          <div class="df">
+            <el-avatar :size="40" :src="userStore.user_pic" />
+            <el-dropdown @command="handleCommand">
+              <span class="el-dropdown-link">
+                <el-icon class="el-icon--right">
+                  <caret-bottom />
+                </el-icon>
+              </span>
+              <template #dropdown>
+                <el-dropdown-menu>
+                  <el-dropdown-item command="profile"
+                    ><el-icon><user /></el-icon
+                    ><span>基本资料</span></el-dropdown-item
+                  >
+                  <el-dropdown-item command="avatar"
+                    ><el-icon><crop /></el-icon
+                    ><span>更换头像</span></el-dropdown-item
+                  >
+                  <el-dropdown-item command="password"
+                    ><el-icon><editPen /></el-icon
+                    ><span>重置密码</span></el-dropdown-item
+                  >
+                  <el-dropdown-item command="logout"
+                    ><el-icon><switchButton /></el-icon
+                    ><span>退出登录</span></el-dropdown-item
+                  >
+                </el-dropdown-menu>
+              </template>
+            </el-dropdown>
+          </div>
+        </el-header>
         <el-main>
           <router-view></router-view>
         </el-main>
@@ -84,7 +136,9 @@ onMounted(() => {
   }
   .el-header {
     margin-bottom: 10px;
-    line-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 }
 </style>

@@ -13,6 +13,7 @@ export const useUserStore = defineStore(
     const removeToken = () => {
       token.value = ''
     }
+
     const userInfo = ref({})
     const getUserInfo = async () => {
       const res = await userGetInfoService()
@@ -20,12 +21,16 @@ export const useUserStore = defineStore(
       userInfo.value = res.data.data
       console.log(userInfo.value, '====userInfo')
     }
+    const setUser = (data) => {
+      userInfo.value = data
+    }
     return {
       token,
       saveToken,
       removeToken,
       getUserInfo,
-      userInfo
+      userInfo,
+      setUser
     }
   },
   {
