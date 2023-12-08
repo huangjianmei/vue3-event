@@ -80,7 +80,7 @@ const validatePass2 = (rule, value, callback) => {
 const formRules = ref({
   username: [
     { required: true, message: '请输入用户名', trigger: 'blur' },
-    { min: 3, max: 5, message: '用户名长度为 3到5 个非空字符', trigger: 'blur' }
+    { min: 3, max: 6, message: '用户名长度为 3到6 个非空字符', trigger: 'blur' }
   ],
   password: [
     { required: true, message: '请输入密码', trigger: 'blur' },
