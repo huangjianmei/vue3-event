@@ -65,14 +65,17 @@ onMounted(() => {
               <span>个人中心</span>
             </template>
             <el-menu-item index="/user/profile"
-              ><el-icon><user /></el-icon><span>基本资料</span></el-menu-item
-            >
-            <el-menu-item index="/user/avatar"
-              ><el-icon><crop /></el-icon><span>更换头像</span></el-menu-item
-            >
-            <el-menu-item index="/user/password"
-              ><el-icon><editPen /></el-icon><span>重置密码</span></el-menu-item
-            >
+              ><el-icon><user /></el-icon>
+              <span>基本资料</span>
+            </el-menu-item>
+            <el-menu-item index="/user/avatar">
+              <el-icon><crop /></el-icon>
+              <span>更换头像</span>
+            </el-menu-item>
+            <el-menu-item index="/user/password">
+              <el-icon><editPen /></el-icon>
+              <span>重置密码</span>
+            </el-menu-item>
           </el-sub-menu>
         </el-menu>
       </el-aside>
@@ -89,22 +92,22 @@ onMounted(() => {
               </span>
               <template #dropdown>
                 <el-dropdown-menu>
-                  <el-dropdown-item command="profile"
-                    ><el-icon><user /></el-icon
-                    ><span>基本资料</span></el-dropdown-item
+                  <el-dropdown-item command="profile">
+                    <el-icon><user /></el-icon>
+                    <span>基本资料</span>
+                  </el-dropdown-item>
+                  <el-dropdown-item command="avatar">
+                    <el-icon><crop /></el-icon>
+                    <span>更换头像</span></el-dropdown-item
                   >
-                  <el-dropdown-item command="avatar"
-                    ><el-icon><crop /></el-icon
-                    ><span>更换头像</span></el-dropdown-item
-                  >
-                  <el-dropdown-item command="password"
-                    ><el-icon><editPen /></el-icon
-                    ><span>重置密码</span></el-dropdown-item
-                  >
-                  <el-dropdown-item command="logout"
-                    ><el-icon><switchButton /></el-icon
-                    ><span>退出登录</span></el-dropdown-item
-                  >
+                  <el-dropdown-item command="password">
+                    <el-icon><editPen /></el-icon>
+                    <span>重置密码</span>
+                  </el-dropdown-item>
+                  <el-dropdown-item command="logout">
+                    <el-icon><switchButton /></el-icon>
+                    <span>退出登录</span>
+                  </el-dropdown-item>
                 </el-dropdown-menu>
               </template>
             </el-dropdown>
