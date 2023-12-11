@@ -21,6 +21,6 @@ export const delChannelService = (id) => {
 }
 
 // 获取文章列表
-export const getActicelService = (data) => {
-  return request.get('/my/acticel/list', { data })
+export const getActicelService = (params) => {
+  return request.get('/my/article/list', { params })
 }
