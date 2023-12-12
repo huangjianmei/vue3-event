@@ -16,3 +16,6 @@ export const userGetInfoService = () => {
 export const userUpdateInfoService = ({ id, nickname, username, email }) => {
   return request.put('/my/userinfo', { id, nickname, username, email })
 }
+export const userUpdateAvatarService = ({ id, avatar }) => {
+  return request.patch('/my/update/avatar', { id, avatar })
+}
