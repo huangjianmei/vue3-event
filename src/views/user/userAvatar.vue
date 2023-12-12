@@ -15,7 +15,6 @@ const onSelectChange = (uploadFile) => {
   reader.readAsDataURL(uploadFile.raw)
   reader.onload = () => {
     imageUrl.value = reader.result
-    console.log(imageUrl.value, '===imageUrl')
   }
 }
 const onUpload = async () => {
@@ -41,7 +40,8 @@ const onUpload = async () => {
       @click="uploadRef.$el.querySelector('input').click()"
       type="primary"
       :icon="Plus"
-      >选择图片</el-button
+    >
+      选择图片</el-button
     >
     <el-button @click="onUpload" type="success" :icon="Upload"
       >上传图片</el-button

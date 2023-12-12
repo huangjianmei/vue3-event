@@ -17,9 +17,7 @@ export const useUserStore = defineStore(
     const userInfo = ref({})
     const getUserInfo = async () => {
       const res = await userGetInfoService()
-      console.log(res, '====res')
       userInfo.value = res.data.data
-      console.log(userInfo.value, '====userInfo')
     }
     const setUser = (data) => {
       userInfo.value = data
