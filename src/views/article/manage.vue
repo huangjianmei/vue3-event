@@ -62,7 +62,7 @@ const successPublish = (type) => {
 </script>
 
 <template>
-  <PageContainer title="文章管理">
+  <page-container title="文章管理">
     <template #extra>
       <el-button type="primary" @click="addArticle">文章管理</el-button>
     </template>
@@ -120,7 +120,7 @@ const successPublish = (type) => {
       @current-change="handleCurrentChange"
     />
     <avatar-edit ref="drawerRef" @successPublish="successPublish" />
-  </PageContainer>
+  </page-container>
 </template>
 
 <style scoped>

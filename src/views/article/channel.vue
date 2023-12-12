@@ -36,7 +36,7 @@ const onSuccess = () => {
 </script>
 
 <template>
-  <PageContainer title="文章分类">
+  <page-container title="文章分类">
     <template #extra>
       <el-button @click="addChannel" type="primary">添加分类</el-button>
     </template>
@@ -68,7 +68,7 @@ const onSuccess = () => {
       </template>
     </el-table>
     <channel-edit ref="dialogRef" @success="onSuccess"></channel-edit>
-  </PageContainer>
+  </page-container>
 </template>
 
 <style scoped lang="scss"></style>

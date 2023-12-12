@@ -11,7 +11,7 @@ defineProps({
   <el-card class="box-card">
     <template #header>
       <div class="card-header df">
-        <span>文章分类</span>
+        <span>{{ title }}</span>
         <div class="extra">
           <slot name="extra"></slot>
         </div>

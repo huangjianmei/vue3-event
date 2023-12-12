@@ -81,7 +81,7 @@ onMounted(() => {
       </el-aside>
       <el-container>
         <el-header>
-          <div>黑马程序员：{{ userStore.userInfo.username }}</div>
+          <div>黑马程序员：{{ userStore.userInfo.nickname }}</div>
           <div class="df">
             <el-avatar :size="40" :src="userStore.user_pic" />
             <el-dropdown @command="handleCommand">
@@ -94,7 +94,7 @@ onMounted(() => {
                 <el-dropdown-menu>
                   <el-dropdown-item command="profile">
                     <el-icon><user /></el-icon>
-                    <span>基本资料</span>
+                    <span>基本信息</span>
                   </el-dropdown-item>
                   <el-dropdown-item command="avatar">
                     <el-icon><crop /></el-icon>
