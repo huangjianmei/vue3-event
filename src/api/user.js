@@ -16,6 +16,11 @@ export const userGetInfoService = () => {
 export const userUpdateInfoService = ({ id, nickname, username, email }) => {
   return request.put('/my/userinfo', { id, nickname, username, email })
 }
+// 更换头像
 export const userUpdateAvatarService = ({ id, avatar }) => {
   return request.patch('/my/update/avatar', { id, avatar })
+}
+//重置密码
+export const userUpdatePwdService = ({ old_pwd, new_pwd, re_pwd }) => {
+  return request.patch('/my/updatepwd', { old_pwd, new_pwd, re_pwd })
 }

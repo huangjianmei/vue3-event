@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
 
-// 用户模块 token saveToken removeToken
+// 用户模块 token setToken removeToken
 export const useCounterStore = defineStore(
   'counter',
   () => {

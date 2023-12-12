@@ -29,15 +29,15 @@ const router = createRouter({
         },
         {
           path: '/user/profile',
-          component: () => import('@/views/user/profile.vue')
+          component: () => import('@/views/user/userProfile.vue')
         },
         {
           path: '/user/avatar',
-          component: () => import('@/views/user/avatar.vue')
+          component: () => import('@/views/user/userAvatar.vue')
         },
         {
           path: '/user/password',
-          component: () => import('@/views/user/password.vue')
+          component: () => import('@/views/user/userPassword.vue')
         }
       ]
     }

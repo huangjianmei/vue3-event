@@ -2,7 +2,7 @@
 import { useUserStore } from '@/stores/user'
 const userStore = useUserStore()
 const loginIn = () => {
-  userStore.saveToken('hjhkhkkkkkkk')
+  userStore.setToken('hjhkhkkkkkkk')
 }
 const loginOut = () => {
   userStore.removeToken()

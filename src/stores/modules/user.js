@@ -2,12 +2,12 @@ import { defineStore } from 'pinia'
 import { ref } from 'vue'
 import { userGetInfoService } from '@/api/user.js'
 
-// 用户模块 token saveToken removeToken
+// 用户模块 token setToken removeToken
 export const useUserStore = defineStore(
   'user-token',
   () => {
     const token = ref('')
-    const saveToken = (newToken) => {
+    const setToken = (newToken) => {
       token.value = newToken
     }
     const removeToken = () => {
@@ -26,7 +26,7 @@ export const useUserStore = defineStore(
     }
     return {
       token,
-      saveToken,
+      setToken,
       removeToken,
       getUserInfo,
       userInfo,

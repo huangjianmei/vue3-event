@@ -3,7 +3,7 @@ import { useUserStore, useCounterStore } from '@/stores'
 const userStore = useUserStore()
 const counterStore = useCounterStore()
 const loginIn = () => {
-  userStore.saveToken('hjhkhkkkkkkk')
+  userStore.setToken('hjhkhkkkkkkk')
 }
 const loginOut = () => {
   userStore.removeToken()

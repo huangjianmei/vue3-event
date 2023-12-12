@@ -83,7 +83,7 @@ onMounted(() => {
         <el-header>
           <div>黑马程序员：{{ userStore.userInfo.nickname }}</div>
           <div class="df">
-            <el-avatar :size="40" :src="userStore.user_pic" />
+            <el-avatar :size="40" :src="userStore.userInfo.user_pic" />
             <el-dropdown @command="handleCommand">
               <span class="el-dropdown-link">
                 <el-icon class="el-icon--right">

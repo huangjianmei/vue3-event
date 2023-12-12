@@ -29,7 +29,7 @@ const sumbit = async (formEl) => {
       .then((res) => {
         ElMessage.success('登录成功')
         formRef.value.resetFields()
-        userStore.saveToken(res.data.token)
+        userStore.setToken(res.data.token)
         router.push('/article/manage')
       })
       .finally(() => {
