@@ -39,8 +39,14 @@ const addArticle = () => {
 const handleEdit = (row) => {
   drawerRef.value.openDrawer(row)
 }
-const handleDelete = (i, row) => {
-  console.log(i, row, '===shanchu')
+const handleDelete = async (i, row) => {
+  await ElMessageBox.confirm('你确定要删除吗', '温馨提示', {
+    type: 'warning',
+    confirmButtonText: '确定',
+    cancelButtonText: '取消'
+  })
+
+  console.log(i, row, '===没有删除接口')
 }
 
 const handleSizeChange = (pagesize) => {
