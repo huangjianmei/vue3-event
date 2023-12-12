@@ -4,6 +4,7 @@ import { ref } from 'vue'
 import { Edit, Delete } from '@element-plus/icons-vue'
 import channelSelect from './components/channelSelect.vue'
 import { formatTime } from '@/utils/format'
+import avatarEdit from './components/avatarEdit.vue'
 
 const params = ref({
   pagenum: 1,
@@ -11,33 +12,20 @@ const params = ref({
   cate_id: '',
   state: ''
 })
-const articelList = ref([
-  {
-    id: 1,
-    title: '文章标题',
-    cate_name: '体育',
-    pub_date: '2023080979',
-    state: '已发布'
-  },
-  {
-    id: 2,
-    title: '文章标题文章标题',
-    cate_name: '新闻',
-    pub_date: '202389789',
-    state: '草稿'
-  }
-])
+const articelList = ref([])
 const formRef = ref(null)
 const total = ref(0)
 const loading = ref(false)
+const drawerRef = ref(null)
 const getList = async () => {
   loading.value = true
   const res = await getActicelService(params.value)
-  console.log(res.data.data)
+  console.log(res.data.data, '=====')
   loading.value = false
   articelList.value = res.data.data
   total.value = res.data.total
 }
+getList()
 const onSubmit = () => {
   console.log('搜索')
   getList()
@@ -45,11 +33,12 @@ const onSubmit = () => {
 const onReset = () => {
   params.value = {}
 }
-
-const handleEdit = (i, row) => {
-  console.log(i, row, '===编辑')
+const addArticle = () => {
+  drawerRef.value.openDrawer({})
 }
-
+const handleEdit = (row) => {
+  drawerRef.value.openDrawer(row)
+}
 const handleDelete = (i, row) => {
   console.log(i, row, '===shanchu')
 }
@@ -62,12 +51,20 @@ const handleCurrentChange = (pagenum) => {
   params.value.pagenum = pagenum
   getList()
 }
+
+const successPublish = (type) => {
+  if (type === 'add') {
+    const lastPage = Math.ceil((total.value + 1) / params.value.pagesize)
+    params.value.pagenum = lastPage
+  }
+  getList()
+}
 </script>
 
 <template>
   <PageContainer title="文章管理">
     <template #extra>
-      <el-button type="primary">文章管理</el-button>
+      <el-button type="primary" @click="addArticle">文章管理</el-button>
     </template>
     <el-form :model="params" ref="formRef" inline>
       <el-form-item label="文章分类">
@@ -93,14 +90,14 @@ const handleCurrentChange = (pagenum) => {
         </template>
       </el-table-column>
       <el-table-column prop="state" label="状态" />
-      <el-table-column label="Operations">
+      <el-table-column label="操作">
         <template #default="{ $index, row }">
           <el-button
             circle
             plain
             type="primary"
             :icon="Edit"
-            @click="handleEdit($index, row)"
+            @click="handleEdit(row)"
           ></el-button>
           <el-button
             circle
@@ -122,7 +119,13 @@ const handleCurrentChange = (pagenum) => {
       @size-change="handleSizeChange"
       @current-change="handleCurrentChange"
     />
+    <avatar-edit ref="drawerRef" @successPublish="successPublish" />
   </PageContainer>
 </template>
 
-<style scoped></style>
+<style scoped>
+.el-pagination {
+  justify-content: end;
+  margin-top: 20px;
+}
+</style>
